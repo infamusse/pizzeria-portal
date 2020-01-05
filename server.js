@@ -1,5 +1,6 @@
 /* global require, process */
 
+const cors = require("cors");
 const fs = require("fs");
 const path = require("path");
 const jsonServer = require("json-server");
@@ -7,7 +8,7 @@ const server = jsonServer.create();
 const router = jsonServer.router("build/db/app.json");
 const middlewares = jsonServer.defaults({
   static: "build",
-  noCors: true,
+  noCors: true
 });
 const port = process.env.PORT || 3131;
 
@@ -34,6 +35,7 @@ server.use(function(req, res, next) {
   next();
 });
 
+server.use(cors());
 server.use(middlewares);
 server.use(router);
 

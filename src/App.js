@@ -6,11 +6,14 @@ import Dashboard from "./components/views/Dashboard/Dashboard";
 import Kitchen from "./components/views/Kitchen/Kitchen";
 import Tables from "./components/views/Tables/Tables";
 import Waiter from "./components/views/Waiter/Waiter";
+import ReservationDetail from "./components/views/Tables/ReservationDetail";
+import EventDetail from "./components/views/Tables/EventDetail";
+import Order from "./components/views/Tables/Order";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter basename={"/panel"}>
+      <BrowserRouter basename={"/"}>
         <MainLayout>
           <Switch>
             <Route
@@ -31,12 +34,22 @@ function App() {
             <Route
               exact
               path={process.env.PUBLIC_URL + "/tables/booking/:id"}
-              component={Tables}
+              component={ReservationDetail}
+            />
+            <Route
+              exact
+              path={process.env.PUBLIC_URL + "/tables/events/:id"}
+              component={EventDetail}
             />
             <Route
               exact
               path={process.env.PUBLIC_URL + "/waiter"}
               component={Waiter}
+            />
+            <Route
+              exact
+              path={process.env.PUBLIC_URL + "/waiter/order/:id"}
+              component={Order}
             />
             <Route
               exact
