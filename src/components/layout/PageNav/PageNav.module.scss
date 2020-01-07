@@ -1,11 +1,3 @@
 .component {
-  position: fixed;
-  top: 0;
-  width: 100vw;
-  display: flex;
-  background-color: grey;
-  > * {
-    margin-left: 10px;
-    color: honeydew;
-  }
+  margin-left: auto;
 }

@@ -13,7 +13,7 @@ const ReservationDetail = ({ match }) => {
     const items = await data.json();
     const { booking } = items;
     if (match.path.includes("booking")) {
-      var detail = booking.filter(item => item.id === match.params.id);
+      var detail = booking.filter(item => item.id == match.params.id);
       setItems(detail);
     }
 
