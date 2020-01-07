@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import propTypes from "prop-types";
+import "typeface-roboto";
+import Typography from "@material-ui/core/Typography";
 
 const Order = ({ match }) => {
   useEffect(() => {
     fetchItems();
-  });
+  }, []);
 
   const [detail, setItems] = useState([]);
 
@@ -20,7 +22,7 @@ const Order = ({ match }) => {
 
   return (
     <div>
-      <p>Order Details:</p>
+      <Typography variant="h4">Order Details:</Typography>
     </div>
   );
 };
